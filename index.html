@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🏥 MedTrack - Smart Medicine Reminder</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="container">
+        <!-- Hospital Banner -->
+        <div class="hospital-banner">
+            <div class="logo">
+                <span>🏥</span>
+                <div>
+                    <h1>MedTrack</h1>
+                    <small>Smart Medicine Reminder System</small>
+                </div>
+            </div>
+            <div class="badge">⚕️ Patient Care &nbsp;|&nbsp; 💊 Prescription Tracker</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-card pending">
+                <div class="number" id="statPending">0</div>
+                <div class="label">⏳ Pending</div>
+            </div>
+            <div class="stat-card taken">
+                <div class="number" id="statTaken">0</div>
+                <div class="label">✅ Taken</div>
+            </div>
+            <div class="stat-card missed">
+                <div class="number" id="statMissed">0</div>
+                <div class="label">❌ Missed</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="statTotal">0</div>
+                <div class="label">📋 Total</div>
+            </div>
+        </div>
+
+        <!-- Add Medicine -->
+        <div class="card">
+            <div class="card-header">
+                <h2>➕ Add Prescription</h2>
+                <span class="icon">💊</span>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Medicine Name <span class="required">*</span></label>
+                    <input type="text" id="medName" placeholder="e.g. Paracetamol" />
+                </div>
+                <div class="form-group">
+                    <label>Reminder Time <span class="required">*</span></label>
+                    <input type="time" id="medTime" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Meal Instruction</label>
+                    <select id="medMeal">
+                        <option value="Before Breakfast">🍳 Before Breakfast</option>
+                        <option value="After Breakfast">🍳 After Breakfast</option>
+                        <option value="Before Lunch">🍽️ Before Lunch</option>
+                        <option value="After Lunch">🍽️ After Lunch</option>
+                        <option value="Before Dinner">🍽️ Before Dinner</option>
+                        <option value="After Dinner">🍽️ After Dinner</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date <span class="required">*</span></label>
+                    <input type="date" id="medDate" />
+                </div>
+            </div>
+            <button class="btn-primary" onclick="addMedicine()">➕ Add Medicine</button>
+        </div>
+
+        <!-- Today's Schedule -->
+        <div class="card">
+            <div class="card-header">
+                <h2>📋 Today's Schedule</h2>
+                <span class="icon">⏰</span>
+            </div>
+            <div id="todayList"></div>
+        </div>
+
+        <!-- History -->
+        <div class="card">
+            <div class="card-header">
+                <h2>📜 Medication History</h2>
+                <span class="icon">📋</span>
+            </div>
+            <div id="historyList"></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>🏥 <span class="heart">❤️</span> MedTrack &mdash; Your Personal Medicine Reminder</p>
+            <p style="font-size: 11px; color: #a0aec0; margin-top: 4px;">© 2026 | Always consult your doctor for medical advice</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
